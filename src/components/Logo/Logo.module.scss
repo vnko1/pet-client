@@ -1,0 +1,9 @@
+.logo {
+  &.mob {
+    @apply md:hidden;
+  }
+
+  &.tab {
+    @apply hidden md:block;
+  }
+}

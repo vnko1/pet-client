@@ -1,0 +1,10 @@
+.pagination {
+  & button {
+    @apply w-[34px] h-[34px] text-base font-normal rounded-[50%] border border-blue bg-transparent transition-all duration-150;
+
+    &:hover,
+    &:focus {
+      @apply bg-blue text-accentWhite;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.error {
+  &__wrapper {
+    @apply h-full flex flex-col justify-between items-center pb-[20px];
+  }
+
+  & h1 {
+    @apply text-center pt-[80px] mb-[80px] md:pt-[60px] max-md:max-w-[280px];
+  }
+
+  & img {
+    @apply mb-4-xs md:mb-[60px];
+  }
+
+  &__link {
+    @apply w-full md:max-w-[248px];
+  }
+}

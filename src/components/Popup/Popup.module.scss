@@ -1,0 +1,6 @@
+.popup {
+  @apply absolute flex flex-col justify-center transition-all duration-150 opacity-0;
+  &.active {
+    @apply opacity-100 translate-y-0;
+  }
+}

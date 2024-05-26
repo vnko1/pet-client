@@ -1,0 +1,30 @@
+.radio {
+  @apply cursor-pointer text-center inline-flex;
+}
+
+.field {
+  @apply w-[0.1px] h-[0.1px] opacity-0 hidden absolute z-[-1];
+
+  &:checked + .button,
+  &:checked + .icon {
+    @apply text-accentWhite bg-blue;
+  }
+}
+
+.button {
+  @apply inline-block py-0-md px-1-lg text-sm tracking-[0.56px] rounded-[40px]  duration-150 transition-all;
+
+  &.btn {
+    @apply bg-blueLight text-blue;
+  }
+
+  &.icon {
+    @apply bg-transparent text-grey;
+  }
+}
+
+.icon {
+  &--right {
+    @apply flex-row-reverse;
+  }
+}
