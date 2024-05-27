@@ -1,0 +1,23 @@
+.field {
+  @apply w-full flex flex-col;
+
+  &__label {
+    @apply text-sm font-medium text-[#111];
+  }
+
+  &__wrapper {
+    @apply w-full;
+  }
+
+  &__input {
+    @apply w-full outline-none border border-blue bg-transparent h-[92px] px-1-lg py-1-lg  rounded-[20px] text-base text-grey resize-none;
+
+    &.error {
+      @apply border-red;
+    }
+
+    &.valid {
+      @apply border-green;
+    }
+  }
+}

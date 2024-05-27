@@ -1,0 +1,12 @@
+.sponsors {
+  @apply flex flex-col justify-center items-center gap-2-xs md:gap-3-sm md:flex-row md:flex-wrap;
+
+  &__item {
+    @apply w-[280px] md:w-[336px]  base:w-[394px] rounded-[40px] bg-originWhite transition-all duration-300 shadow-sm py-1-lg px-1-sm base:min-h-[326px];
+
+    &:hover,
+    &:focus {
+      @apply scale-105;
+    }
+  }
+}

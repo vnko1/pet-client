@@ -1,0 +1,7 @@
+.field {
+  @apply text-center w-full;
+
+  &__input {
+    @apply hidden;
+  }
+}

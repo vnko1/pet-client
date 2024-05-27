@@ -1,0 +1,37 @@
+main {
+  @apply bg-contain  bg-center bg-bg_mob md:bg-bg_tab base:bg-bg;
+}
+
+.container {
+  @apply w-full max-w-full mx-auto px-2-xs md:px-3-sm base:px-1-xl;
+}
+
+.section {
+  @apply pt-4-xs md:pt-[80px];
+}
+
+.wrapper {
+  @apply relative w-full rounded-[20px] bg-originWhite flex flex-col justify-center shadow-sm;
+}
+
+.title {
+  @apply mb-2-md md:mb-4-xs text-center;
+}
+
+.modal {
+  &__text {
+    @apply text-xl font-medium text-black leading-normal tracking-[0.96px];
+  }
+}
+
+.no-scroll {
+  @apply overflow-hidden;
+}
+
+.error-wrapper {
+  @apply w-full rounded-[20px] bg-originWhite flex flex-col justify-center shadow-sm gap-4-xs base:max-w-[394px] text-center items-center min-h-[320px];
+
+  &__btn {
+    @apply w-full md:max-w-[248px];
+  }
+}

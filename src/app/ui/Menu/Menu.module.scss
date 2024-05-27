@@ -1,0 +1,23 @@
+.modal {
+  @apply w-screen h-[91vh] top-[62px] left-0 md:top-[85px] base:hidden translate-x-full;
+
+  &__body {
+    @apply w-full h-full flex flex-col gap-4-xs items-center pt-4-xs md:pt-[92px] bg-accentWhite;
+  }
+}
+
+.active {
+  @apply translate-x-0;
+}
+
+.menu {
+  @apply base:hidden;
+  &__auth {
+    @apply flex flex-col gap-[12px] md:hidden;
+  }
+  &-nav {
+    &__links {
+      @apply flex flex-col gap-[20px] md:gap-[60px];
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.search {
+  @apply block w-full md:max-w-[608px] mx-auto;
+
+  &__wrapper {
+    @apply block w-full relative rounded-[20px] overflow-hidden shadow-sm;
+  }
+
+  &__icon {
+    @apply absolute text-blue  top-1/2 -translate-y-1/2 right-1-xs md:right-2-xs;
+  }
+
+  &__field {
+    @apply w-full px-2-xs py-1-sm font-inter text-sm text-[#888] bg-originWhite tracking-[0.56px] md:text-lg md:tracking-[0.8px] outline-none;
+  }
+}

@@ -1,0 +1,74 @@
+.field {
+  @apply w-full flex;
+  &.small {
+    @apply flex-row items-center justify-between;
+  }
+
+  &.normal {
+    @apply flex-col;
+  }
+
+  &__label {
+    &.small {
+      @apply text-sm font-semibold tracking-[0.56px] md:text-[18px] md:tracking-[0.72px];
+    }
+
+    &.normal {
+      @apply text-sm font-medium text-[#111];
+    }
+  }
+
+  &__wrapper {
+    @apply w-full;
+
+    &.small {
+      @apply max-w-[70%];
+    }
+  }
+  &__input {
+    @apply w-full outline-none border border-blue bg-transparent;
+
+    &.normal {
+      @apply px-1-lg py-1-sm  rounded-[40px] text-base text-grey;
+    }
+
+    &.small {
+      @apply rounded-[20px] px-1-sm py-0-sm text-black tracking-[0.64px] text-xs md:text-base disabled:placeholder:opacity-100 disabled:placeholder:text-black placeholder:opacity-100 placeholder:text-black;
+    }
+
+    &.error {
+      @apply border-red;
+    }
+
+    &.valid {
+      @apply border-green;
+    }
+  }
+
+  &__error {
+    @apply inline-block border-red text-red text-xs ml-1-lg;
+  }
+}
+.wrapper {
+  @apply relative block;
+}
+
+.icons {
+  @apply absolute top-1/2 -translate-y-1/2 right-[16px] text-blue flex gap-1-sm;
+}
+
+.icon {
+  @apply bg-transparent;
+
+  &.cross {
+    @apply text-red;
+  }
+
+  &.eye {
+    @apply text-blue;
+  }
+
+  &.check {
+    @apply text-green;
+  }
+}

@@ -1,0 +1,129 @@
+.btn {
+  @apply cursor-pointer relative inline-flex items-center justify-center transition-all duration-150 rounded-[40px];
+
+  &.btn--loading {
+    @apply animate-pulse pointer-events-none bg-slate-400;
+  }
+
+  &.btn--fullwidth {
+    @apply w-full;
+  }
+
+  &.btn--small {
+    @apply text-base font-bold px-2-xs py-0-md;
+  }
+
+  &.btn--medium {
+    @apply text-lg font-medium;
+  }
+
+  &.btn--large {
+    @apply text-[32px] font-medium;
+  }
+
+  &.btn--small.btn--icon-right {
+    @apply flex-row-reverse;
+  }
+
+  &.btn--medium.btn--icon-right {
+    @apply flex-row-reverse;
+  }
+
+  &.btn--large.btn--icon-right {
+    @apply flex-row-reverse;
+  }
+
+  &.btn--primary.btn--contained {
+    @apply bg-yellow text-accentWhite border-2 border-solid border-yellow;
+
+    &:active,
+    &:hover,
+    &:focus {
+      @apply text-yellow bg-transparent;
+    }
+  }
+
+  &.btn--text {
+    @apply p-0;
+  }
+
+  &.btn--outlined {
+    @apply bg-transparent;
+  }
+
+  &.btn--primary.btn--outlined {
+    @apply border-2 border-solid border-yellow text-yellow;
+
+    &:active,
+    &:hover {
+      @apply bg-yellow text-accentWhite;
+    }
+  }
+
+  &.btn--primary.btn--text {
+    @apply bg-transparent text-black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      @apply text-blue;
+    }
+
+    &.current {
+      @apply text-yellow;
+    }
+  }
+
+  &.btn--secondary.btn--text {
+    @apply bg-transparent text-yellow;
+    &:hover,
+    &:focus,
+    &:active {
+      @apply text-blue;
+    }
+  }
+
+  &.btn--accent.btn--text {
+    @apply bg-transparent text-blue;
+    &:hover,
+    &:focus,
+    &:active {
+      @apply text-yellow;
+    }
+  }
+
+  &.btn--secondary.btn--outlined {
+    @apply bg-transparent text-blue border-2 border-solid border-blue;
+
+    &:active,
+    &:hover {
+      @apply bg-blue text-accentWhite;
+    }
+  }
+
+  &.btn--secondary.btn--contained {
+    @apply bg-blue text-accentWhite border-2 border-solid border-blue;
+
+    &:active,
+    &:hover,
+    &:focus {
+      @apply text-blue bg-transparent;
+    }
+
+    &:disabled {
+      @apply bg-slate-400 text-white border-transparent;
+    }
+  }
+
+  > svg,
+  &.btn__icon {
+    @apply w-[24px] mr-[8px];
+  }
+
+  &.btn--icon-right {
+    > svg,
+    .btn__icon {
+      @apply right-0 ml-[8px] mr-0;
+    }
+  }
+}

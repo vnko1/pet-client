@@ -1,0 +1,31 @@
+.article {
+  @apply relative shadow-sm bg-originWhite w-full md:max-w-[336px] rounded-[20px] overflow-hidden;
+
+  &__image {
+    @apply mx-auto object-scale-down rounded-[20px] h-[252px] object-[center_top] w-auto;
+  }
+
+  &__content {
+    @apply px-1-sm py-1-lg md:h-[304px] flex flex-col justify-between;
+  }
+
+  &__info {
+    @apply flex justify-between;
+  }
+}
+
+.title {
+  @apply text-xl font-bold mb-1-lg;
+}
+
+.text {
+  @apply text-base font-normal max-h-[128px] overflow-hidden mb-4-xs;
+}
+
+.date {
+  @apply text-grey font-normal text-base;
+}
+
+.link {
+  @apply font-medium text-blue text-base;
+}

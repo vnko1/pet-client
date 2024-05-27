@@ -1,0 +1,14 @@
+.auth {
+  @apply py-4-xs px-1-sm bg-originWhite rounded-[20px] md:max-w-[608px] mx-auto md:py-[60px] md:px-[74px];
+
+  &__title {
+    @apply text-center text-lg text-black mb-2-xs font-medium md:text-[36px] md:mb-4-xs;
+  }
+
+  &__text {
+    @apply mt-0-md md:mt-1-md text-grey text-xs text-center;
+  }
+}
+.link {
+  @apply text-blue;
+}
