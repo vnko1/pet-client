@@ -6,7 +6,9 @@ import { getIronSession } from "iron-session";
 import { defaultSession, SessionData, sessionOptions, sleep } from "@/services";
 import { JSONParser } from "@/utils";
 
-const R_TOKEN_TIME = process.env.R_TOKEN_EXP as string;
+// * Refresh token
+// const R_TOKEN_TIME = process.env.R_TOKEN_EXP as string;
+// *
 
 export async function getSession(shouldSleep = true) {
   const session = await getIronSession<SessionData>(cookies(), sessionOptions);
@@ -31,21 +33,25 @@ export async function handleAuth(access_token: string) {
 }
 
 export async function sessionLogin(
-  access_token: string,
-  refresh_token: string
+  access_token: string
+  // refresh_token: string
 ) {
   await handleAuth(access_token);
-  cookies().set("refresh_token", refresh_token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    maxAge: +R_TOKEN_TIME,
-  });
+  // * Refresh token
+  // cookies().set("refresh_token", refresh_token, {
+  //   httpOnly: true,
+  //   secure: process.env.NODE_ENV === "production",
+  //   maxAge: +R_TOKEN_TIME,
+  // });
+  // *
   revalidatePath("/", "layout");
 }
 
 export async function sessionLogout() {
   const session = await getSession(false);
-  cookies().delete("refresh_token");
+  // * Refresh token
+  // cookies().delete("refresh_token");
+  // * Refresh token
   session.destroy();
   revalidatePath("/", "layout");
 }
