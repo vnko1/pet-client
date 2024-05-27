@@ -1,11 +1,18 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import cn from "classnames";
 
 import { IconEnum, NoticesTypes } from "@/types";
 import { Icon, Modal, UIButton } from "@/components";
 import { useModal } from "@/hooks";
+import {
+  addToFavorite,
+  deleteNotice,
+  getNotice,
+  removeFromFavorite,
+} from "@/lib";
 
 import { getCategory } from "../../utils";
 import { AdvModal, Pet } from "..";
@@ -29,19 +36,24 @@ const Notice: FC<NoticeProps> = ({
   const deleteModal = useModal(undefined, true);
 
   const [petIsLoading, setPetIsLoading] = useState(false);
-  const [petCard] = useState<NoticesTypes | null>(null);
+  const [petCard, setPetCard] = useState<NoticesTypes | null>(null);
 
-  const [isFavorite] = useState(
+  const [isFavorite, setIsFavorite] = useState(
     favorites.some((item) => item.toString() === userId)
   );
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setIsFavorite(favorites.some((item) => item.toString() === userId));
+  }, [favorites, userId]);
 
   const openPetModal = async () => {
     try {
       setPetIsLoading(true);
-      _id;
-      // const res = await getNotice(_id);
-
-      // petModal.setActive(true);
+      const res = await getNotice(_id);
+      setPetCard(res);
+      petModal.setActive(true);
     } catch (error) {
       if (error instanceof Error) throw new Error(error.message);
     } finally {
@@ -49,27 +61,27 @@ const Notice: FC<NoticeProps> = ({
     }
   };
 
-  const onDelete = async () => {
-    try {
-      // await deleteNotice(_id);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   const onTrashClick = () => {
     deleteModal.setActive(true);
   };
   const onCancel = () => {
     deleteModal.setActive(false);
   };
-
+  const onDelete = async () => {
+    try {
+      await deleteNotice(_id);
+      deleteModal.setActive(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const onHandleFavoriteClick = async () => {
     if (!userId) return advModal.setActive(true);
 
     try {
-      // const res = isFavorite
-      //   ? await removeFromFavorite(_id)
-      //   : await addToFavorite(_id);
+      isFavorite
+        ? await removeFromFavorite({ id: _id, path: pathName })
+        : await addToFavorite({ id: _id, path: pathName });
     } catch (error) {
       console.log(error);
     }

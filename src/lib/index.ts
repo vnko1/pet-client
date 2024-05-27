@@ -13,4 +13,11 @@ export {
   addPet,
   deletePet,
   addNotice,
+  getNotices,
+  deleteNotice,
+  addToFavorite,
+  removeFromFavorite,
+  getNotice,
+  getOwnNotices,
+  getFavNotices,
 } from "./actions";

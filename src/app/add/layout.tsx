@@ -52,7 +52,7 @@ function AddPetLayout({ children }: { children: ReactNode }) {
         : await addNotice(formData);
 
       if (data.category === "your-pet") router.push(LinksEnum.USER);
-      else if (data.category === "sell") router.push(LinksEnum.NOTICES);
+      else if (data.category === "sell") router.push(LinksEnum.NOTICES_SELL);
       else if (data.category === "lost-found")
         router.push(LinksEnum.NOTICES_LOST_FOUND);
       else if (data.category === "in-good-hands")

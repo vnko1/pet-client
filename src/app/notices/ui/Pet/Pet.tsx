@@ -1,10 +1,13 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 import { UIButton } from "@/components";
 import { IconEnum } from "@/types";
 import { useModal } from "@/hooks";
+import { addToFavorite, removeFromFavorite } from "@/lib";
+
 import { getCategory } from "../../utils";
 
 import AdvModal from "../AdvModal/AdvModal";
@@ -30,17 +33,27 @@ const Pet: FC<PetProps> = ({
   },
 }) => {
   const modalProps = useModal(undefined, true);
-  const [isFavorite] = useState(
+  const [isFavorite, setIsFavorite] = useState(
     favorites.some((item) => item.toString() === userId)
   );
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setIsFavorite(favorites.some((item) => item.toString() === userId));
+  }, [favorites, userId]);
 
   const onHandleFavoriteClick = async () => {
     if (!userId) return modalProps.setActive(true);
     try {
-      _id;
-      // const res = isFavorite
-      //   ? await removeFromFavorite(_id)
-      //   : await addToFavorite(_id);
+      if (isFavorite) {
+        const res = await removeFromFavorite({ id: _id, path: pathName });
+
+        setIsFavorite(res.favorites.some((item) => item === userId));
+      } else {
+        const res = await addToFavorite({ id: _id, path: pathName });
+        setIsFavorite(res.favorites.some((item) => item.toString() === userId));
+      }
     } catch (error) {
       console.log(error);
     }

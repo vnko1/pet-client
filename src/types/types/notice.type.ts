@@ -19,7 +19,7 @@ export type NoticesTypes = {
   favorites: Array<string>;
 };
 
-export type NoticeSearchParamsParams = {
+export type NoticeSearchParams = {
   sex?: string;
   age?: string;
   category: "sell" | "lost-found" | "in-good-hands" | "favorites" | "own";
