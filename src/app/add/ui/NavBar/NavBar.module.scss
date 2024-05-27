@@ -1,0 +1,32 @@
+.nav {
+  @apply w-full flex justify-between;
+
+  & > li {
+    @apply w-1/3;
+  }
+}
+
+.link {
+  @apply block text-xxs font-medium text-grey w-full md:text-sm;
+
+  &::after {
+    content: "";
+    @apply block w-full h-0-md rounded-[8px] mt-1-sm bg-blueLight;
+  }
+
+  &.active {
+    @apply text-blue;
+
+    &::after {
+      @apply bg-blue;
+    }
+  }
+
+  &.checked {
+    @apply text-green;
+
+    &::after {
+      @apply bg-green;
+    }
+  }
+}

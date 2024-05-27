@@ -1,0 +1,41 @@
+.info {
+  @apply flex flex-col gap-2-xs md:gap-2-md items-center;
+
+  &__top-wrapper {
+    @apply w-full md:max-w-[202px];
+  }
+
+  &__bottom-wrapper {
+    @apply w-full;
+  }
+}
+
+.gender {
+  @apply self-start;
+  &__title {
+    @apply text-sm mb-0-md;
+  }
+
+  &__wrapper {
+    @apply flex gap-1-lg md:gap-2-xs;
+  }
+}
+
+.image {
+  @apply flex items-center gap-2-xl;
+  &__title {
+    @apply text-sm mb-0-md;
+  }
+
+  &__input {
+    @apply w-[112px] h-[112px] md:w-[182px] md:h-[182px] bg-blueLight rounded-[20px] md:rounded-[40px] text-blue overflow-hidden;
+  }
+}
+
+.button {
+  @apply flex items-center justify-center bg-transparent w-full;
+
+  &-plus {
+    @apply w-[112px] h-[112px] md:w-[182px] md:h-[182px] bg-blueLight rounded-[20px] md:rounded-[40px] text-blue;
+  }
+}

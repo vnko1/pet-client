@@ -1,0 +1,27 @@
+.add-pet {
+  @apply min-h-[496px] flex flex-col justify-between md:max-w-[458px]  mx-auto px-0-md py-2-xs md:px-3-sm;
+
+  &.large {
+    @apply md:max-w-[704px];
+  }
+}
+
+.head {
+  @apply mb-1-lg md:mb-2-xs;
+}
+
+.title {
+  @apply font-medium text-lg leading-normal tracking-[0.8px] text-black mb-1-xl md:text-[28px] md:mb-2-md;
+}
+
+.form {
+  @apply h-full flex flex-col justify-between;
+}
+
+.fields {
+  @apply mb-2-md md:mb-4-xs;
+}
+
+.buttons {
+  @apply flex flex-col gap-2-xs self-stretch md:flex-row-reverse;
+}

@@ -3,10 +3,10 @@ import styles from "./profile.module.scss";
 
 export const dynamic = "force-dynamic";
 export default function Layout({
-  //   pets,
+  pets,
   user,
 }: {
-  //   pets: ReactNode;
+  pets: ReactNode;
   user: ReactNode;
 }) {
   return (
@@ -14,7 +14,7 @@ export default function Layout({
       <section className="section">
         <div className={`container ${styles["profile"]}`}>
           {user}
-          {/* {pets} */}
+          {pets}
         </div>
       </section>
     </main>

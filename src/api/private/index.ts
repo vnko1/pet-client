@@ -49,6 +49,7 @@ export async function privateApi(
 
   if (!res.ok) {
     if (data.statusCode === 401) return null;
+
     throw new CustomError(
       data.statusCode,
       data.path,

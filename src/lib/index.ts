@@ -9,4 +9,8 @@ export {
   register,
   login,
   getUser,
+  getPets,
+  addPet,
+  deletePet,
+  addNotice,
 } from "./actions";
