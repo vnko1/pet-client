@@ -50,6 +50,7 @@ const SignUp: FC<AuthFormProps> = ({
     try {
       await login(data);
       router.push(LinksEnum.USER);
+      router.refresh();
     } catch (error) {
       if (error instanceof Error)
         methods.setError("root.serverError", {

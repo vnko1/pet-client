@@ -1,6 +1,6 @@
-// "use client";
+"use client";
 import React, { FC } from "react";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { IconEnum, LinksEnum } from "@/types";
 import { sessionLogout } from "@/lib";
@@ -9,8 +9,10 @@ import { UIButton } from "@/components";
 import { ButtonsProps } from "./Buttons.type";
 
 const Buttons: FC<ButtonsProps> = ({ userName, isLoggedIn }) => {
+  const router = useRouter();
   const handleLogout = async () => {
     await sessionLogout();
+    router.refresh();
   };
   const renderButtons = isLoggedIn ? (
     <>
