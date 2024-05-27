@@ -9,7 +9,7 @@ import { FormField, UIButton } from "@/components";
 import { LinksEnum, LoginType, RegisterType } from "@/types";
 
 import { setDataToLS } from "@/utils";
-import { register } from "@/lib";
+import { login, register } from "@/lib";
 
 import { authSchema } from "./AuthForm.schema";
 import { AuthFormProps } from "./AuthForm.type";
@@ -47,11 +47,19 @@ const SignUp: FC<AuthFormProps> = ({
   };
 
   const handleLogin = async (data: LoginType) => {
-    console.log("🚀 ~ handleLogin ~ data:", data);
-
-    // await sessionLogin(res.data.access_token);
-
-    // router.push(LinksEnum.USER);
+    try {
+      await login(data);
+      router.push(LinksEnum.USER);
+    } catch (error) {
+      if (error instanceof Error)
+        methods.setError("root.serverError", {
+          message:
+            error.message === "Unauthorized"
+              ? "Wrong email or password!"
+              : error.message,
+          type: "custom",
+        });
+    }
   };
 
   const handleSubmit: SubmitHandler<AuthSchemaType> = async (data) => {
