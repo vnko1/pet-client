@@ -1,0 +1,11 @@
+.form {
+  @apply flex flex-col gap-1-md md:gap-3-sm;
+
+  &__button {
+    @apply mt-2-lg md:mt-0-md;
+  }
+
+  &__error {
+    @apply text-xxs text-red text-center;
+  }
+}
