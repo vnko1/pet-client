@@ -8,4 +8,5 @@ export {
   sessionLogout,
   register,
   login,
+  getMe,
 } from "./actions";

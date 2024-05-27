@@ -26,6 +26,4 @@ async function Page({ searchParams }: { searchParams: SearchParams }) {
   );
 }
 
-export const dynamic = "force-dynamic";
-
 export default Page;

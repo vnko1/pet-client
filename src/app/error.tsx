@@ -17,7 +17,7 @@ export default function Error({
     <main>
       <section className={styles["error"]}>
         <div className={`container ${styles["error__wrapper"]}`}>
-          <h1>{error.message.toUpperCase()}</h1>
+          <h1>{error.message}</h1>
           <Image
             alt="Not found"
             src="/images/404-desc@2x.webp"

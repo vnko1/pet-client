@@ -8,6 +8,7 @@ import { useModal } from "@/hooks";
 
 import { Buttons, Menu } from "..";
 
+import { HeaderProps } from "./Header.type";
 import styles from "./Header.module.scss";
 
 const links = [
@@ -16,7 +17,7 @@ const links = [
   { label: "Our friends", href: LinksEnum.FRIENDS },
 ];
 
-const Header: FC = () => {
+const Header: FC<HeaderProps> = ({ user }) => {
   const modalProps = useModal(undefined, true);
   const pathName = usePathname();
 
@@ -24,6 +25,7 @@ const Header: FC = () => {
     if (!modalProps.active) return modalProps.setActive(true);
     modalProps.close();
   };
+
   return (
     <header className={styles["header"]}>
       <div className={`container ${styles["header__wrapper"]}`}>
@@ -46,7 +48,7 @@ const Header: FC = () => {
         </nav>
         <div className={styles["btn-wrapper"]}>
           <div className={styles["auth"]}>
-            <Buttons user={null} />
+            <Buttons user={user} />
           </div>
           <div className={styles["menu"]}>
             <UIButton variant="text" onClick={toggleModal}>
@@ -59,7 +61,7 @@ const Header: FC = () => {
           </div>
         </div>
       </div>
-      <Menu {...modalProps} links={links} pathName={pathName} user={null} />
+      <Menu {...modalProps} links={links} pathName={pathName} user={user} />
     </header>
   );
 };

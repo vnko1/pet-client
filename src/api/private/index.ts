@@ -1,5 +1,6 @@
 import { getSession } from "@/lib";
 import { CustomError } from "@/services";
+import { JSONParser } from "@/utils";
 
 export async function privateApi(
   endpoint: string,
@@ -18,12 +19,16 @@ export async function privateApi(
   };
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + endpoint, reqOpt);
   const data = await res.json();
-  if (!res.ok)
+
+  if (!res.ok) {
+    if (data.statusCode === 401) return null;
     throw new CustomError(
       data.statusCode,
       data.path,
       data.errorMessage,
       data.errorMessage
     );
-  return data;
+  }
+
+  return JSONParser(data);
 }

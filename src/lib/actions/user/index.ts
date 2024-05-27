@@ -1,4 +1,4 @@
-"use server";
+// "use server";
 
 import { privateApi } from "@/api";
 import { EndpointsEnum } from "@/types";

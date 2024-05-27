@@ -3,6 +3,7 @@ import React, { FC } from "react";
 // import { useRouter } from "next/navigation";
 
 import { IconEnum, LinksEnum } from "@/types";
+import { sessionLogout } from "@/lib";
 import { UIButton } from "@/components";
 
 import { ButtonsProps } from "./Buttons.type";
@@ -15,6 +16,9 @@ const Buttons: FC<ButtonsProps> = ({ user }) => {
   //   router.refresh();
   // };
 
+  const handleLogout = async () => {
+    await sessionLogout();
+  };
   const renderButtons = user ? (
     <>
       <UIButton
@@ -23,7 +27,7 @@ const Buttons: FC<ButtonsProps> = ({ user }) => {
         color="secondary"
         icon={IconEnum.LOGOUT}
         alignIcon="right"
-        // onClick={handleLogout}
+        onClick={handleLogout}
       >
         Log out
       </UIButton>
