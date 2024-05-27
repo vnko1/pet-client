@@ -1,0 +1,7 @@
+.pets {
+  @apply base:flex-grow;
+}
+
+.head-wrapper {
+  @apply flex justify-between items-baseline;
+}

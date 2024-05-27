@@ -18,6 +18,6 @@ export const login = tryCatchWrapper(async (data: LoginType) => {
   });
 
   await sessionLogin(res.access_token, res.data.name);
-  // redirect('s')
+
   return res;
 });

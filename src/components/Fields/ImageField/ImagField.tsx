@@ -21,6 +21,7 @@ const ImagField: FC<ImageFieldProps> = ({
   blurDataURL,
   placeholder,
   disabled,
+  sizes,
 }) => {
   const { register } = useFormContext();
   const { ref: registerRef, ...rest } = register(name);
@@ -59,6 +60,7 @@ const ImagField: FC<ImageFieldProps> = ({
         src={preview || blurDataURL || ""}
         placeholder={placeholder}
         blurDataURL={blurDataURL}
+        sizes={sizes}
       />
     </div>
   );

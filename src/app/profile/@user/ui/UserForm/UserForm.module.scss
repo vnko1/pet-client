@@ -1,0 +1,65 @@
+.form {
+  @apply py-2-xs px-0-md relative flex flex-col items-center gap-[60px] md:flex-row-reverse md:justify-between md:items-start md:pr-[76px] md:pl-2-xs  base:flex-col base:items-center base:px-1-lg;
+
+  &__image {
+    @apply flex flex-col justify-center items-center gap-0-md;
+  }
+
+  &__content {
+    @apply flex flex-col gap-1-lg w-full  md:max-w-[70%] base:max-w-none md:gap-1-sm base:gap-1-xs;
+  }
+
+  &__buttons {
+    @apply w-full;
+    &.edit {
+      @apply w-full;
+    }
+  }
+}
+
+.cross-btn-wrapper {
+  @apply absolute top-[14px] right-[14px];
+}
+
+.thumb {
+  @apply relative rounded-[40px] overflow-hidden;
+}
+
+.image {
+  @apply overflow-hidden w-[182px] h-[182px];
+
+  &-field {
+    @apply absolute -bottom-[16px] left-1/2 -translate-x-1/2 translate-y-1/2;
+  }
+}
+
+.custom-btn {
+  @apply bg-transparent text-blue;
+
+  & > span {
+    @apply text-grey;
+  }
+}
+
+.buttons {
+  @apply flex justify-center items-center gap-0-md;
+}
+
+.button {
+  @apply flex items-center justify-center bg-transparent;
+  &-text {
+    @apply gap-0-md hover:text-yellow text-blue font-normal text-xs leading-[22px] tracking-[0.48px] bg-transparent;
+
+    & > span {
+      @apply text-black;
+    }
+  }
+
+  &-icon {
+    @apply text-red hover:text-blue;
+  }
+}
+
+.error {
+  @apply text-xxs text-red text-center;
+}

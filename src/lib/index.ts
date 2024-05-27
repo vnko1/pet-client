@@ -8,5 +8,9 @@ export {
   sessionLogout,
   register,
   login,
-  getMe,
+  getUser,
+  getPets,
+  addPet,
+  deletePet,
+  addNotice,
 } from "./actions";

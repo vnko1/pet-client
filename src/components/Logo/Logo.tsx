@@ -15,11 +15,13 @@ const Logo: FC<ILogo> = ({ classNames }) => {
         className={`${styles["logo"]} ${styles["mob"]} ${classNames}`}
       >
         <Image
-          width={116}
-          height={20}
           src="/images/logo_mob.webp"
           alt="Logo"
           placeholder="empty"
+          className="w-[116px] h-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
           priority
         />
       </Link>
@@ -28,8 +30,10 @@ const Logo: FC<ILogo> = ({ classNames }) => {
         className={`${styles["logo"]} ${styles["tab"]} ${classNames}`}
       >
         <Image
-          width={162}
-          height={28}
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-[162px] h-[28px]"
           src="/images/logo.webp"
           alt="Logo"
           placeholder="empty"

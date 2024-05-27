@@ -2,7 +2,7 @@
   @apply relative shadow-sm bg-originWhite w-full md:max-w-[336px] rounded-[20px] overflow-hidden;
 
   &__image {
-    @apply mx-auto object-scale-down rounded-[20px] h-[252px] object-[center_top] w-auto;
+    @apply mx-auto object-scale-down rounded-[20px] h-[252px] w-[728px] object-[center_top];
   }
 
   &__content {

@@ -45,8 +45,10 @@ const Sponsor: FC<SponsorProps> = ({
             <Image
               src={imageUrl}
               alt="Friends logo"
-              width={146}
-              height={104}
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-[144px] h-[104px]"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk8LpfDwADJQGq85EagQAAAABJRU5ErkJggg=="
             />

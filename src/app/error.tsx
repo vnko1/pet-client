@@ -21,8 +21,10 @@ export default function Error({
           <Image
             alt="Not found"
             src="/images/404-desc@2x.webp"
-            width={822}
-            height={360}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-[822px] h-[360px]"
           />
           <div className={styles["error__link"]}>
             <UIButton

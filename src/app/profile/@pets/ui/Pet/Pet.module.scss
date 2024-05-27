@@ -1,0 +1,27 @@
+.pet {
+  @apply w-full rounded-[20px] bg-originWhite flex flex-col justify-center shadow-sm items-center py-1-lg px-2-xs md:p-2-xs md:flex-row md:gap-2-xs md:min-h-[256px];
+
+  &__top-wrapper {
+    @apply mb-2-xs md:mb-0 md:w-1/4 md:self-start;
+  }
+
+  &__bottom-wrapper {
+    @apply relative w-full flex flex-col gap-1-sm md:self-start md:grow-0 md:gap-1-lg;
+  }
+}
+
+.trash-button {
+  @apply absolute top-0 right-0;
+}
+
+.image {
+  @apply w-[240px] h-[240px] rounded-[20px] md:w-[128px] md:h-[128px] base:w-[160px] base:h-[160px];
+}
+
+.label {
+  @apply text-sm text-black tracking-[0.56px] font-normal base:text-base;
+
+  & > span {
+    @apply font-bold;
+  }
+}
