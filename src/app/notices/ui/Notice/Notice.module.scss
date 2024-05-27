@@ -1,0 +1,74 @@
+.notice {
+  @apply w-full shadow-sm rounded-b-[40px] bg-accentWhite flex flex-col items-center justify-center;
+
+  &__thumb {
+    @apply relative w-[280px] h-[280px] md:w-[336px] md:h-[288px] base:w-[288px];
+  }
+
+  &__content {
+    @apply w-full px-1-lg pb-2-md pt-2-xs md:px-2-xs;
+  }
+}
+
+.title {
+  @apply text-[24px] font-bold mb-2-xs pl-0-sm;
+}
+
+.label {
+  @apply absolute flex items-center justify-center bg-blueLight;
+
+  &__info {
+    @apply gap-0-sm text-blue text-xs h-[28px] px-1-md rounded-[16px] bottom-[12px];
+    & > span {
+      @apply text-black;
+    }
+  }
+
+  &__btn {
+    @apply w-4-xs h-4-xs rounded-[50px] text-blue transition-all duration-150 hover:bg-blue focus:bg-blue right-[12px] hover:text-blueLight focus:text-blueLight;
+  }
+}
+
+.category {
+  @apply text-black top-1-lg rounded-r-[16px] px-1-xl h-[32px];
+}
+
+.location {
+  @apply left-[12px];
+}
+
+.sex {
+  @apply right-[12px];
+}
+
+.trash {
+  @apply top-[68px];
+}
+
+.favorite {
+  @apply top-[12px];
+
+  &.active {
+    @apply bg-yellow text-accentWhite;
+  }
+}
+
+.modal {
+  @apply py-[60px] px-1-sm items-center;
+
+  &__title {
+    @apply text-[24px] text-center mb-1-md md:text-[28px] md:mb-4-xs;
+  }
+
+  &__text {
+    @apply text-center text-sm mb-4-md md:max-w-[392px] md:text-base md:mb-4-xl;
+  }
+
+  &__buttons {
+    @apply flex flex-col gap-0-md md:max-w-[336px] md:gap-1-lg md:flex-row;
+  }
+}
+
+.pet-modal {
+  @apply px-1-xs pb-1-lg pt-4-md md:p-3-sm;
+}

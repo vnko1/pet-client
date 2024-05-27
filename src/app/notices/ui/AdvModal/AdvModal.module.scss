@@ -1,0 +1,19 @@
+.modal {
+  @apply bg-originWhite rounded-[20px] w-full  max-w-[280px]  md:max-w-[608px] shadow-sm;
+
+  &__body {
+    @apply px-2-xs py-[60px] md:px-4-xs;
+
+    & > h2 {
+      @apply tracking-[0.56px] text-[24px] font-medium mb-2-xs text-black md:text-[36px] md:tracking-[1.44px] md:mb-4-xs;
+    }
+
+    & > p {
+      @apply text-center leading-[18px] tracking-[0.56px] text-sm text-black mb-4-xs md:text-lg md:leading-[28px] md:tracking-[0.8px];
+    }
+  }
+}
+
+.buttons {
+  @apply w-full flex flex-col gap-1-sm md:max-w-[328px] md:flex-row  mx-auto md:justify-between;
+}

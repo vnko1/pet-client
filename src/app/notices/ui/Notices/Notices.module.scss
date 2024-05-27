@@ -1,0 +1,7 @@
+.notices {
+  @apply flex flex-col items-center justify-center gap-2-md md:gap-3-sm md:flex-row md:flex-wrap;
+
+  & > li {
+    @apply w-full md:max-w-[336px] base:max-w-[288px];
+  }
+}

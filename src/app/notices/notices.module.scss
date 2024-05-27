@@ -1,0 +1,22 @@
+.notices {
+  @apply pb-4-xs relative;
+  &__wrapper {
+    @apply flex flex-col items-center;
+  }
+
+  &__title {
+    @apply mb-2-md md:mb-4-xs;
+  }
+
+  &__nav-bar {
+    @apply mb-2-md md:mb-4-xs flex justify-between gap-1-lg w-full;
+  }
+}
+
+.categories {
+  @apply md:max-w-[50%];
+}
+
+.content-wrapper {
+  @apply mb-4-xs md:mb-[70px] w-full;
+}

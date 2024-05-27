@@ -1,0 +1,6 @@
+.filter {
+  @apply px-1-lg py-0-md rounded-[20px] bg-accentWhite outline-none shadow-sm text-blue text-xs min-w-[86px] flex items-center gap-0-sm;
+  & svg {
+    @apply pt-[1px];
+  }
+}

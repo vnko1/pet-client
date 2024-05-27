@@ -10,4 +10,13 @@ export {
 export { register, login } from "./auth";
 export { getUser } from "./user";
 export { getPets, addPet, deletePet } from "./pets";
-export { addNotice } from "./notices";
+export {
+  addNotice,
+  getNotices,
+  deleteNotice,
+  addToFavorite,
+  removeFromFavorite,
+  getNotice,
+  getOwnNotices,
+  getFavNotices,
+} from "./notices";
