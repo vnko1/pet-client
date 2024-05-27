@@ -8,8 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormField, UIButton } from "@/components";
 // import { login, register, sessionLogin } from "@/lib";
 import { LoginType, RegisterType } from "@/types";
-
 import { setDataToLS } from "@/utils";
+import { register } from "@/lib";
 
 import { authSchema } from "./AuthForm.schema";
 import { AuthFormProps } from "./AuthForm.type";
@@ -33,10 +33,17 @@ const SignUp: FC<AuthFormProps> = ({
   });
 
   const handleRegister = async (data: RegisterType) => {
-    console.log("🚀 ~ handleRegister ~ data:", data);
-
-    setDataToLS({ newUser: true });
-    // router.push(LinksEnum.LOGIN);
+    try {
+      await register(data);
+      setDataToLS({ newUser: true });
+      // router.push(LinksEnum.LOGIN);
+    } catch (error) {
+      if (error instanceof Error)
+        methods.setError("root.serverError", {
+          message: error.message,
+          type: "custom",
+        });
+    }
   };
 
   const handleLogin = async (data: LoginType) => {

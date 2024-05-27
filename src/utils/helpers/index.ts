@@ -8,8 +8,8 @@ export const tryCatchWrapper =
     try {
       return await cb(data);
     } catch (error) {
-      if (error instanceof Error) throw new Error(error.message);
       if (error instanceof CustomError) throw new Error(error.errorMessage);
+      if (error instanceof Error) throw new Error(error.message);
       throw new Error("Something went wrong! Try again later.");
     }
   };
