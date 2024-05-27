@@ -55,6 +55,18 @@ export const getNotice = tryCatchWrapper(
   async (id: string) => await privateApi(EndpointsEnum.Notice + "/" + id)
 );
 
-export const getOwnNotices = tryCatchWrapper(async () => {});
+export const getOwnNotices = tryCatchWrapper(
+  async (searchParams: NoticeSearchParams) =>
+    await privateApi(
+      EndpointsEnum.Owner + "?" + new URLSearchParams(searchParams),
+      { next: { tags: ["notices"] } }
+    )
+);
 
-export const getFavNotices = tryCatchWrapper(async () => {});
+export const getFavNotices = tryCatchWrapper(
+  async (searchParams: NoticeSearchParams) =>
+    await privateApi(
+      EndpointsEnum.Favorites + "?" + new URLSearchParams(searchParams),
+      { next: { tags: ["notices"] } }
+    )
+);
