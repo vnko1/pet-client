@@ -1,4 +1,4 @@
-import { QueryParams } from "./query.type";
+import { SearchParams } from "./searchParams.type";
 import { User } from "./user.type";
 
 export type NoticeCategory = "sell" | "lost-found" | "in-good-hands";
@@ -19,8 +19,8 @@ export type NoticesTypes = {
   favorites: Array<string>;
 };
 
-export type NoticeQueryParams = {
-  sex?: string | null;
-  age?: string | null;
+export type NoticeSearchParamsParams = {
+  sex?: string;
+  age?: string;
   category: "sell" | "lost-found" | "in-good-hands" | "favorites" | "own";
-} & QueryParams;
+} & SearchParams;

@@ -4,7 +4,7 @@ import { JSONParser } from "@/utils";
 import { Sponsors } from "./ui";
 
 export default async function Friends() {
-  const res = await getSponsors();
+  const res = await getSponsors(undefined);
 
   return (
     <main>
