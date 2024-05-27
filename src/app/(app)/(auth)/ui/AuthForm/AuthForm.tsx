@@ -1,13 +1,13 @@
 "use client";
 import React, { FC, useState } from "react";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { FormField, UIButton } from "@/components";
-// import { login, register, sessionLogin } from "@/lib";
-import { LoginType, RegisterType } from "@/types";
+import { LinksEnum, LoginType, RegisterType } from "@/types";
+
 import { setDataToLS } from "@/utils";
 import { register } from "@/lib";
 
@@ -22,7 +22,7 @@ const SignUp: FC<AuthFormProps> = ({
 }) => {
   const isRegister = path === "register";
   const schema = authSchema(path);
-  // const router = useRouter();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
   type AuthSchemaType = z.infer<typeof schema>;
@@ -36,7 +36,7 @@ const SignUp: FC<AuthFormProps> = ({
     try {
       await register(data);
       setDataToLS({ newUser: true });
-      // router.push(LinksEnum.LOGIN);
+      router.push(LinksEnum.LOGIN);
     } catch (error) {
       if (error instanceof Error)
         methods.setError("root.serverError", {
