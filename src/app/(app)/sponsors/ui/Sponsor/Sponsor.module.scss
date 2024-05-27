@@ -1,0 +1,43 @@
+.card {
+  &__link {
+    @apply h-[50px] text-blue inline-block w-full text-center align-top text-lg font-bold transition-all duration-300 mb-1-lg;
+
+    &:hover,
+    &:focus {
+      @apply scale-105;
+    }
+  }
+
+  &__box {
+    @apply flex;
+  }
+
+  &__image {
+    @apply max-w-[74px] block mr-1-sm md:max-w-[124px] md:mr-2-xs;
+    max-width: 74px;
+  }
+
+  &__content {
+    @apply text-xs;
+  }
+}
+
+.text {
+  @apply cursor-pointer;
+
+  &:not(:last-child) {
+    @apply mb-1-sm;
+  }
+  &:active,
+  &:focus,
+  &:hover {
+    @apply text-blue;
+  }
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+.dropdown {
+  @apply mb-1-sm font-semibold;
+}

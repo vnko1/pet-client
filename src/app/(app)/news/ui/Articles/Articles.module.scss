@@ -1,0 +1,10 @@
+.articles {
+  @apply flex flex-col gap-2-md md:flex-row md:flex-wrap md:gap-3-sm mb-4-xs md:mb-[60px] base:mb-[68px] justify-center base:max-w-[1244px];
+}
+
+.article {
+  &::before {
+    content: "";
+    @apply block w-full rounded-[40px] h-[8px] bg-blue mb-1-sm md:mb-1-md;
+  }
+}

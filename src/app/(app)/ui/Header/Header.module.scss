@@ -1,0 +1,38 @@
+.header {
+  @apply pt-2-xl pb-0-sm md:pt-3-sm md:pb-0-md base:pt-4-xs base:pb-1-xs;
+
+  &__wrapper {
+    @apply flex items-center justify-between;
+  }
+}
+
+.nav {
+  @apply flex items-center gap-[160px];
+
+  &__links {
+    @apply hidden base:flex items-center gap-[40px];
+  }
+}
+.btn-wrapper {
+  @apply flex gap-2-md items-center;
+}
+
+.menu {
+  @apply base:hidden;
+  &__auth {
+    @apply flex flex-col gap-[12px] md:hidden;
+  }
+  &-nav {
+    &__links {
+      @apply flex flex-col gap-[20px] md:gap-[60px];
+    }
+  }
+}
+
+.auth {
+  @apply hidden md:flex gap-[20px];
+}
+
+.icon {
+  @apply text-yellow bg-transparent;
+}
