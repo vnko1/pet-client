@@ -7,7 +7,13 @@ import Buttons from "../Buttons/Buttons";
 import { IMenu } from "./Menu.type";
 import styles from "./Menu.module.scss";
 
-const Menu: FC<IMenu> = ({ links, pathName, user, ...props }) => {
+const Menu: FC<IMenu> = ({
+  links,
+  pathName,
+  userName,
+  isLoggedIn,
+  ...props
+}) => {
   return (
     <Modal
       {...props}
@@ -18,7 +24,7 @@ const Menu: FC<IMenu> = ({ links, pathName, user, ...props }) => {
       enableSwipe
     >
       <div className={styles["menu__auth"]}>
-        <Buttons user={user} />
+        <Buttons userName={userName} isLoggedIn={isLoggedIn} />
       </div>
       <nav className={styles["menu-nav"]}>
         <ul className={styles["menu-nav__links"]}>

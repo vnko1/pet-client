@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
-import { HeaderWrapper } from "./ui";
+import { Header } from "./ui";
+import { getParsedSession } from "@/lib";
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
+  const { userName, isLoggedIn } = await getParsedSession();
   return (
     <>
-      <HeaderWrapper />
+      <Header userName={userName} isLoggedIn={isLoggedIn} />
       {children}
     </>
   );
 }
-
-export const dynamic = "force-dynamic";

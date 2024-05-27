@@ -17,7 +17,7 @@ const links = [
   { label: "Our friends", href: LinksEnum.FRIENDS },
 ];
 
-const Header: FC<HeaderProps> = ({ user }) => {
+const Header: FC<HeaderProps> = ({ userName, isLoggedIn }) => {
   const modalProps = useModal(undefined, true);
   const pathName = usePathname();
 
@@ -48,7 +48,7 @@ const Header: FC<HeaderProps> = ({ user }) => {
         </nav>
         <div className={styles["btn-wrapper"]}>
           <div className={styles["auth"]}>
-            <Buttons user={user} />
+            <Buttons userName={userName} isLoggedIn={isLoggedIn} />
           </div>
           <div className={styles["menu"]}>
             <UIButton variant="text" onClick={toggleModal}>
@@ -61,7 +61,13 @@ const Header: FC<HeaderProps> = ({ user }) => {
           </div>
         </div>
       </div>
-      <Menu {...modalProps} links={links} pathName={pathName} user={user} />
+      <Menu
+        {...modalProps}
+        links={links}
+        pathName={pathName}
+        userName={userName}
+        isLoggedIn={isLoggedIn}
+      />
     </header>
   );
 };

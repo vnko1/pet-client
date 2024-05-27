@@ -25,18 +25,20 @@ export async function getParsedSession() {
   return JSONParser(res);
 }
 
-export async function handleAuth(access_token: string) {
+export async function handleAuth(access_token: string, userName: string) {
   const session = await getSession(true);
   session.access_token = access_token;
+  session.userName = userName;
   session.isLoggedIn = true;
   await session.save();
 }
 
 export async function sessionLogin(
-  access_token: string
+  access_token: string,
+  userName: string
   // refresh_token: string
 ) {
-  await handleAuth(access_token);
+  await handleAuth(access_token, userName);
   // * Refresh token
   // cookies().set("refresh_token", refresh_token, {
   //   httpOnly: true,

@@ -1,3 +1,1 @@
-import { User } from "@/types";
-
-export type HeaderProps = { user: User | null };
+export type HeaderProps = { userName: string | null; isLoggedIn: boolean };

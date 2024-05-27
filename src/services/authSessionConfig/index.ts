@@ -4,12 +4,14 @@ const SESSION_TIME = process.env.SESSION_EXP as string;
 
 export interface SessionData {
   access_token: string | null;
+  userName: string | null;
   isLoggedIn: boolean;
 }
 
 export const defaultSession: SessionData = {
   access_token: null,
   isLoggedIn: false,
+  userName: null,
 };
 
 export const sessionOptions: SessionOptions = {

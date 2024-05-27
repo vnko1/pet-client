@@ -8,18 +8,11 @@ import { UIButton } from "@/components";
 
 import { ButtonsProps } from "./Buttons.type";
 
-const Buttons: FC<ButtonsProps> = ({ user }) => {
-  // const router = useRouter();
-
-  // const navigate = (url: string) => {
-  //   router.push(url);
-  //   router.refresh();
-  // };
-
+const Buttons: FC<ButtonsProps> = ({ userName, isLoggedIn }) => {
   const handleLogout = async () => {
     await sessionLogout();
   };
-  const renderButtons = user ? (
+  const renderButtons = isLoggedIn ? (
     <>
       <UIButton
         variant="contained"
@@ -38,9 +31,8 @@ const Buttons: FC<ButtonsProps> = ({ user }) => {
         icon={IconEnum.USER}
         alignIcon="left"
         href={LinksEnum.USER}
-        // onClick={() => navigate(LinksEnum.USER)}
       >
-        {user.name}
+        {userName}
       </UIButton>
     </>
   ) : (
