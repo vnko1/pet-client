@@ -19,9 +19,9 @@ async function OwnPage({ searchParams }: PageProps) {
   return (
     <>
       <div className={styles["content-wrapper"]}>
-        <Notices notices={res.data} />
+        <Notices notices={res?.data || []} />
       </div>
-      <Pagination totals={res.total} limit={6} />
+      <Pagination totals={res?.total || 0} limit={6} />
     </>
   );
 }
