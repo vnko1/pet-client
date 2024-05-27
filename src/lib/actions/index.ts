@@ -8,4 +8,4 @@ export {
   sessionLogout,
 } from "./authSession";
 export { register, login } from "./auth";
-export { getMe } from "./user";
+export { getUser } from "./user";

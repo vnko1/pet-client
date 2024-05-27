@@ -1,12 +1,12 @@
+import { getUser } from "@/lib";
+
 import { UserForm, UserModal } from "./ui";
 
 import profileStyles from "../profile.module.scss";
 import userStyles from "./user.module.scss";
-import { getMe } from "@/lib";
 
 export default async function UserPage() {
-  const user = await getMe(undefined);
-
+  const user = await getUser(undefined);
   return (
     <>
       <div className={userStyles["user"]}>

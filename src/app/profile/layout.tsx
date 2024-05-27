@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import styles from "./profile.module.scss";
 
+export const dynamic = "force-dynamic";
 export default function Layout({
   //   pets,
   user,

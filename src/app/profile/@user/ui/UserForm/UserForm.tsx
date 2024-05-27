@@ -13,6 +13,7 @@ import { UserFromProps } from "./UserForm.type";
 import styles from "./UserForm.module.scss";
 import { sessionLogout } from "@/lib";
 import { useRouter } from "next/navigation";
+import { updateUser } from "@/lib/actions/user";
 
 const UserForm: FC<UserFromProps> = ({ user }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -57,13 +58,13 @@ const UserForm: FC<UserFromProps> = ({ user }) => {
         formData.append(key, data[key as keyof UserSchemaType]);
     });
     try {
-      // const res = await updateUser(formData);
+      await updateUser(formData);
     } catch (error) {
-      // if (isAxiosError(error))
-      //   setError("root.serverError", {
-      //     type: "custom",
-      //     message: error.response?.data.errorMessage,
-      //   });
+      if (error instanceof Error)
+        methods.setError("root.serverError", {
+          message: error.message,
+          type: "custom",
+        });
     } finally {
       setIsLoading(false);
     }

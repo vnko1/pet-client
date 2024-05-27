@@ -1,9 +1,15 @@
-// "use server";
+"use server";
+import { revalidatePath } from "next/cache";
 
-import { privateApi } from "@/api";
-import { EndpointsEnum } from "@/types";
 import { tryCatchWrapper } from "@/utils";
+import { privateApi, privateAxiosApi } from "@/api";
+import { EndpointsEnum, LinksEnum } from "@/types";
 
-export const getMe = tryCatchWrapper(async () => {
+export const getUser = tryCatchWrapper(async () => {
   return await privateApi(EndpointsEnum.Profile);
+});
+
+export const updateUser = tryCatchWrapper(async (data: FormData) => {
+  await privateAxiosApi.put(EndpointsEnum.Profile, data);
+  revalidatePath(LinksEnum.USER, "layout");
 });
