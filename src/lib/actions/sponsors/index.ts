@@ -1,5 +1,3 @@
-"use server";
-
 import { publicApi } from "@/api";
 import { EndpointsEnum } from "@/types";
 import { tryCatchWrapper } from "@/utils";
