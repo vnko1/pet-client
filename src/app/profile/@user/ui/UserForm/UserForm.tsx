@@ -133,8 +133,10 @@ const UserForm: FC<UserFromProps> = ({ user }) => {
               setPreview={setPreview}
               setActive={setActive}
               setFile={setFile}
-              width={182}
-              height={182}
+              width={0}
+              height={0}
+              imageClassNames="w-[182px] h-[182px]"
+              sizes="100vw"
               alt="user avatar"
               placeholder="blur"
               blurDataURL={imagePlaceHolder}

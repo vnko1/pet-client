@@ -24,6 +24,7 @@ const Search: FC = () => {
       defaultValue={searchParams.get("query")?.toString()}
       classNames={styles["search"]}
       onHandleChange={onHandleChange}
+      name="query"
     />
   );
 };

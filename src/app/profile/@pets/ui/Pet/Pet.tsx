@@ -22,8 +22,9 @@ const Pet: FC<PetProps> = ({ imageUrl, name, date, comments, type, _id }) => {
       <div className={styles["pet__top-wrapper"]}>
         <Image
           src={imageUrl}
-          width={240}
-          height={240}
+          width={0}
+          height={0}
+          sizes="100vw"
           alt="Pet"
           className={styles["image"]}
           placeholder="blur"

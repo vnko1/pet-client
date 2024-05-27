@@ -99,8 +99,10 @@ function InfoPage() {
             setPreview={setPreview}
             preview={preview || addImage}
             inputRef={inputRef}
-            width={182}
-            height={182}
+            width={0}
+            height={0}
+            imageClassNames="w-[182px] h-[182px]"
+            sizes="100vw"
             alt="pet photo"
             classNames={styles["image__input"]}
           />

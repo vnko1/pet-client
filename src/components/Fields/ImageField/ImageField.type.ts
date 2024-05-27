@@ -17,4 +17,5 @@ export type ImageFieldProps = {
   disabled?: boolean;
   placeholder?: PlaceholderValue;
   blurDataURL?: string;
+  sizes?: string;
 };

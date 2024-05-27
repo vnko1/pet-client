@@ -19,8 +19,9 @@ const Article: FC<ArticleProps> = ({
       <Image
         src={imgUrl}
         alt="article's image"
-        width={727}
-        height={252}
+        width={0}
+        height={0}
+        sizes="100vw"
         className={styles["article__image"]}
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk8LpfDwADJQGq85EagQAAAABJRU5ErkJggg=="
