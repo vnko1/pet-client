@@ -1,0 +1,42 @@
+.wrapper {
+  @apply flex flex-col gap-2-md items-end;
+}
+
+.filters {
+  @apply flex md:gap-1-sm;
+}
+
+.button {
+  @apply flex justify-center items-center rounded-[50px] md:rounded-[40px] h-[40px] md:px-2-xs  duration-150 transition-all  text-xs md:text-base;
+}
+
+.filter {
+  @apply max-md:w-[40px] h-[40px] bg-blueLight text-blue md:border-2 md:border-blue md:bg-transparent md:min-w-[152px] overflow-hidden;
+
+  &__wrapper {
+    @apply relative;
+  }
+
+  & > span {
+    @apply hidden md:inline-block;
+  }
+
+  &.active {
+    @apply text-white bg-grBlue border-transparent;
+  }
+}
+.nav {
+  @apply flex-col text-white max-md:w-[80px] max-md:h-[80px] border-transparent bg-grBlue fixed z-20 right-4 top-3/4 md:static md:flex-row-reverse md:min-w-[130px];
+}
+
+.popup {
+  @apply px-0-md py-1-md rounded-[20px] bg-originWhite shadow-sm w-[152px] gap-0-md scale-0;
+}
+
+.active {
+  @apply opacity-100 scale-100;
+}
+
+.filter-btn-wrapper {
+  @apply flex gap-1-sm;
+}

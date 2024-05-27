@@ -17,7 +17,7 @@ export const login = tryCatchWrapper(async (data: LoginType) => {
     body: JSON.stringify(data),
   });
 
-  await sessionLogin(res.access_token, res.data.name);
+  await sessionLogin(res.access_token, res.data.name, res.data._id);
 
   return res;
 });

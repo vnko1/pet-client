@@ -25,20 +25,26 @@ export async function getParsedSession() {
   return JSONParser(res);
 }
 
-export async function handleAuth(access_token: string, userName: string) {
+export async function handleAuth(
+  access_token: string,
+  userName: string,
+  userId: string
+) {
   const session = await getSession(true);
   session.access_token = access_token;
   session.userName = userName;
+  session.userId = userId;
   session.isLoggedIn = true;
   await session.save();
 }
 
 export async function sessionLogin(
   access_token: string,
-  userName: string
+  userName: string,
+  userId: string
+
   // refresh_token: string
-) {
-  await handleAuth(access_token, userName);
+
   // * Refresh token
   // cookies().set("refresh_token", refresh_token, {
   //   httpOnly: true,
@@ -46,14 +52,18 @@ export async function sessionLogin(
   //   maxAge: +R_TOKEN_TIME,
   // });
   // *
+) {
+  await handleAuth(access_token, userName, userId);
+
   revalidatePath("/", "layout");
 }
 
+// * Refresh token
+// cookies().delete("refresh_token");
+// * Refresh token
 export async function sessionLogout() {
   const session = await getSession(false);
-  // * Refresh token
-  // cookies().delete("refresh_token");
-  // * Refresh token
+
   session.destroy();
   revalidatePath("/", "layout");
 }
